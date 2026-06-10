@@ -48,7 +48,7 @@ export default async function handler(req, res) {
       ticketContent = await fetchGitHubIssue(ticket);
     }
 
-    const prompt = `You are an expert developer support engineer specializing in API issues and general developer tooling. Triage the following support ticket and respond ONLY with a JSON object in this exact format, no markdown, no explanation:
+    const prompt = `You are an expert Technical Support Engineer. Triage the following support ticket and respond ONLY with a JSON object in this exact format, no markdown, no explanation:
 {
   "summary": "one sentence summary of the issue",
   "likely_cause": "clear explanation of the most likely root cause",
