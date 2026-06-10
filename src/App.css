@@ -1,0 +1,176 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background: #0d1117;
+  color: #e6edf3;
+  min-height: 100vh;
+}
+
+.app {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 48px 24px;
+}
+
+header {
+  margin-bottom: 40px;
+}
+
+header h1 {
+  font-size: 32px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  color: #ffffff;
+}
+
+header p {
+  color: #8b949e;
+  margin-top: 4px;
+  font-size: 14px;
+}
+
+textarea {
+  width: 100%;
+  background: #161b22;
+  border: 1px solid #30363d;
+  border-radius: 8px;
+  color: #e6edf3;
+  padding: 14px;
+  font-size: 14px;
+  resize: vertical;
+  outline: none;
+  font-family: inherit;
+  line-height: 1.6;
+}
+
+textarea:focus {
+  border-color: #58a6ff;
+}
+
+textarea::placeholder {
+  color: #484f58;
+}
+
+button {
+  margin-top: 12px;
+  padding: 10px 24px;
+  background: #238636;
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+button:hover:not(:disabled) {
+  background: #2ea043;
+}
+
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.error {
+  margin-top: 24px;
+  padding: 12px 16px;
+  background: #1f1117;
+  border: 1px solid #f85149;
+  border-radius: 8px;
+  color: #f85149;
+  font-size: 14px;
+}
+
+.result {
+  margin-top: 32px;
+  border: 1px solid #30363d;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.result-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 20px 24px;
+  background: #161b22;
+  border-bottom: 1px solid #30363d;
+}
+
+.result-header h2 {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+.severity {
+  font-size: 12px;
+  font-weight: 600;
+  padding: 2px 10px;
+  border-radius: 12px;
+  white-space: nowrap;
+}
+
+.severity-high {
+  background: #3d1f1f;
+  color: #f85149;
+}
+
+.severity-normal {
+  background: #1f2d1f;
+  color: #3fb950;
+}
+
+.severity-low {
+  background: #1f2535;
+  color: #58a6ff;
+}
+
+.section {
+  padding: 20px 24px;
+  border-bottom: 1px solid #30363d;
+}
+
+.section:last-child {
+  border-bottom: none;
+}
+
+.section h3 {
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #8b949e;
+  margin-bottom: 10px;
+}
+
+.section p {
+  font-size: 14px;
+  line-height: 1.7;
+  color: #e6edf3;
+}
+
+.section ol,
+.section ul {
+  padding-left: 20px;
+  font-size: 14px;
+  line-height: 1.8;
+  color: #e6edf3;
+}
+
+.section a {
+  color: #58a6ff;
+  text-decoration: none;
+}
+
+.section a:hover {
+  text-decoration: underline;
+}
