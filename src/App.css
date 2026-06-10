@@ -119,6 +119,20 @@ button:disabled {
   white-space: nowrap;
 }
 
+.confidence {
+  font-size: 12px;
+  font-weight: 600;
+  padding: 2px 10px;
+  border-radius: 12px;
+  white-space: nowrap;
+}
+
+.badges {
+  display: flex;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
 .severity-high {
   background: #3d1f1f;
   color: #f85149;
@@ -132,6 +146,21 @@ button:disabled {
 .severity-low {
   background: #1f2535;
   color: #58a6ff;
+}
+
+.confidence-high {
+  background: #1f2d1f;
+  color: #3fb950;
+}
+
+.confidence-mid {
+  background: #2d2a1f;
+  color: #d29922;
+}
+
+.confidence-low {
+  background: #3d1f1f;
+  color: #f85149;
 }
 
 .section {
