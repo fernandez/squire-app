@@ -1,6 +1,6 @@
 # squire
 
-Squire is a technical support triage assistant powered by Claude AI. Paste a support ticket, error message, or GitHub issue URL to get guidance, documentation, and assign a severity level.
+Squire is a technical support triage assistant that leverages Claude AI. Paste a support ticket, error message, or GitHub issue URL to get guidance, documentation, and assign a severity level.
 
 ### _Usage_
 
