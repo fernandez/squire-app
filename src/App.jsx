@@ -36,6 +36,12 @@ function App() {
     return "severity-low";
   };
 
+  const confidenceColor = (c) => {
+    if (c >= 80) return "confidence-high";
+    if (c >= 50) return "confidence-mid";
+    return "confidence-low";
+  };
+
   return (
     <div className="app">
       <header>
@@ -62,9 +68,14 @@ function App() {
           <div className="result">
             <div className="result-header">
               <h2>{result.summary}</h2>
-              <span className={`severity ${severityColor(result.severity)}`}>
-                {result.severity}
-              </span>
+              <div className="badges">
+                <span className={`severity ${severityColor(result.severity)}`}>
+                  {result.severity}
+                </span>
+                <span className={`confidence ${confidenceColor(result.confidence)}`}>
+                  {result.confidence}% confident
+                </span>
+              </div>
             </div>
 
             <div className="section">
