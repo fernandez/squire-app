@@ -1,16 +1,49 @@
 # squire
 
-Support triage assistant using Claude AI. Paste a support ticket, error message, or GitHub issue URL to get guidance, documentation, and assign a severity level.
+Squire is a technical support triage assistant powered by Claude AI. Paste a support ticket, error message, or GitHub issue URL to get guidance, documentation, and assign a severity level.
 
-#### _Features_
+### _Usage_
+
+Enter a GitHub Issue URL in the format `https://github.com/owner/repo/issues/123`, or the content of a support ticket, and click **Triage**.
+
+### _Features_
 
 - Accepts text or a GitHub issue URL
 - Fetches GitHub issue content including title, body, labels, and state
 - Returns troubleshooting guidance and a severity rating (Low / Normal / High)
 - Supports private GitHub repositories
 
-#### _Usage_
+### _Tech_
 
-- Enter any error message or support ticket content and click **Triage**.
+- React + Vite
+- Vercel
+- Claude API
+- GitHub REST API
 
-- Paste a GitHub Issue URL in the format `https://github.com/owner/repo/issues/123` and Squire will fetch the issue content before triaging.
+---
+
+#### Setup
+
+```bash
+git clone https://github.com/yourusername/squire.git
+cd squire
+npm install
+```
+
+Create a `.env` file:
+```
+ANTHROPIC_API_KEY=your_anthropic_key
+GITHUB_TOKEN=your_github_token
+```
+
+```bash
+vercel dev
+```
+
+#### Deploy
+
+```bash
+vercel env add ANTHROPIC_API_KEY production
+vercel env add GITHUB_TOKEN production
+vercel --prod
+```
