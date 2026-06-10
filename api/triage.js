@@ -48,11 +48,12 @@ export default async function handler(req, res) {
       ticketContent = await fetchGitHubIssue(ticket);
     }
 
-    const prompt = `You are an expert Technical Support Engineer. Triage the following support ticket and respond ONLY with a JSON object in this exact format, no markdown, no explanation:
+    const prompt = `You are an expert Technical Support Engineer. Triage the following support ticket and respond ONLY with a JSON object in this exact format, no markdown, no explanation. The confidence field should be an integer from 0 to 100 representing how confident you are in this triage given the information provided:
 {
   "summary": "one sentence summary of the issue",
   "likely_cause": "clear explanation of the most likely root cause",
   "severity": "Low | Normal | High",
+  "confidence": 85,
   "next_steps": ["step 1", "step 2", "step 3"],
   "relevant_docs": [{"title": "doc title", "url": "https://..."}]
 }
