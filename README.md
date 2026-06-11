@@ -12,6 +12,7 @@ Enter a GitHub Issue URL in the format `https://github.com/owner/repo/issues/123
 - Fetches GitHub issue content including title, body, labels, and state
 - Returns troubleshooting guidance and a severity rating (Low / Normal / High)
 - Supports private GitHub repositories
+- Login function to manage requests
 
 ### _Tech_
 
