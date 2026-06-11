@@ -35,6 +35,7 @@ Create a `.env` file:
 ```
 ANTHROPIC_API_KEY=your_anthropic_key
 GITHUB_TOKEN=your_github_token
+APP_PASSWORD=your_password
 ```
 
 ```bash
