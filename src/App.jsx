@@ -6,7 +6,32 @@ function App() {
   const [loading, setLoading] = useState(false);
   const [result, setResult] = useState(null);
   const [error, setError] = useState(null);
+  const [authed, setAuthed] = useState(() => {
+    return localStorage.getItem("squire_authed") === "true";
+  });
+  const [passwordInput, setPasswordInput] = useState("");
+  const [passwordError, setPasswordError] = useState(false);
 
+  const handleLogin = async () => {
+    try {
+      const res = await fetch("/api/auth", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ password: passwordInput }),
+      });
+      if (res.ok) {
+        localStorage.setItem("squire_authed", "true");
+        setAuthed(true);
+      } else {
+        setPasswordError(true);
+        setPasswordInput("");
+      }
+    } catch {
+      setPasswordError(true);
+      setPasswordInput("");
+    }
+  };
+ 
   const triage = async () => {
     setLoading(true);
     setResult(null);
@@ -41,6 +66,33 @@ function App() {
     if (c >= 50) return "confidence-mid";
     return "confidence-low";
   };
+
+  if (!authed) {
+    return (
+      <div className="app">
+        <header>
+          <h1>squire</h1>
+          <p>Developer support triage assistant</p>
+        </header>
+        <div className="login">
+          <input
+            type="password"
+            value={passwordInput}
+            onChange={(e) => {
+              setPasswordInput(e.target.value);
+              setPasswordError(false);
+            }}
+            onKeyDown={(e) => e.key === "Enter" && handleLogin()}
+            placeholder="Password"
+            className={passwordError ? "error-input" : ""}
+            autoFocus
+          />
+          <button onClick={handleLogin}>Enter</button>
+          {passwordError && <p className="error">Incorrect password</p>}
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="app">
