@@ -1,3 +1,5 @@
+![GitHub License](https://img.shields.io/github/license/fernandez/squire-app) ![GitHub top language](https://img.shields.io/github/languages/top/fernandez/squire-app)
+
 # squire
 
 Squire is a technical support triage assistant that leverages Claude AI. Paste a support ticket, error message, or GitHub issue URL to get guidance, documentation, and assign a severity level.
